@@ -13,5 +13,5 @@ export async function namespaceToCid (namespace: string): Promise<CID> {
 
 /** returns number of ms beween now and expiration time */
 export function getExpiration (expireTime: bigint): number {
-  return Number(expireTime) - new Date().getTime()
+  return Number(expireTime) - (new Date().getTime()/1000)
 }

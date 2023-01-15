@@ -21,7 +21,7 @@ export class ReservationStore implements IReservationStore {
     const expire = new Date()
     expire.setHours(expire.getHours() + 12)
     this.reservations.set(peer.toString(), { addr, expire })
-    return { status: Status.OK, expire: expire.getTime() }
+    return { status: Status.OK, expire: expire.getTime() / 1000 }
   }
 
   async removeReservation (peer: PeerId) {

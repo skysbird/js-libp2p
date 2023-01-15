@@ -43,7 +43,7 @@ export namespace HopMessage {
           w.fork()
         }
 
-        if (opts.writeDefaults === true || (obj.type != null && __TypeValues[obj.type] !== 0)) {
+        if (opts.writeDefaults === true || (obj.type != null)) {
           w.uint32(8)
           HopMessage.Type.codec().encode(obj.type, w)
         }
